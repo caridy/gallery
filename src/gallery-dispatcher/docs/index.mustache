@@ -1,0 +1,144 @@
+<div class="intro">
+    <p>
+    Porting Bubbling Library Dispatcher Plugin to YUI 3
+    </p>
+</div>
+
+<h2>Description</h2>
+
+<p><h3>Overview</h3><br>
+<br>
+<br>
+<br>
+The Dispatcher satisfies a very common need of developers using the YUI library: dynamic execution of Ajax response content. Typical strategies to fulfill this need, like executing the innerHTML property or referencing remote scripts, are unreliable due to browser incompatibilities. The Dispatcher normalizes this behavior across all a-grade browsers. <br>
+<br>
+<br>
+<br>
+<h3>Usage</h3><br>
+<br>
+<br>
+<br>
+Dispatcher extends Base, here is the syntax to create a dispatcher obj:<br>
+<br>
+<br>
+<br>
+```// Call the &quot;use&quot; method, passing in &quot;gallery-dispatcher&quot;. This will <br>
+<br>
+// load the dispatcher module and all the required dependencies. <br>
+<br>
+YUI().use(&quot;gallery-dispatcher&quot;, function(Y) {<br>
+<br>
+  var obj = new Y.Dispatcher({<br>
+<br>
+    node: '#demo'<br>
+<br>
+  });<br>
+<br>
+  // Setting a simple content<br>
+<br>
+  obj.set('content', '&lt;p&gt;content that will be injected within #demo&lt;/p&gt;');<br>
+<br>
+  // Loading a fragment through AJAX<br>
+<br>
+  obj.set('uri', '/get/html/fragment.php');<br>
+<br>
+});```<br>
+<br>
+<br>
+<br>
+Use &quot;uri&quot; or &quot;content&quot; attributes to inject new content within a &quot;node&quot;:<br>
+<br>
+<br>
+<br>
+<ul>
+<li>content: to inject a html fragment into a Node.</li>
+</ul>
+<br>
+<br>
+<ul>
+<li>uri: to use io module to load an html fragment and inject it into a Node.</li>
+</ul>
+<br>
+<br>
+<ul>
+<li>normalize: set to true to enabling normalization process in you plan to inject a html document instead of a regular html fragment.</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+There are also numerous events that you can listen for during the life cycle as well, check the documentation for more details.<br>
+<br>
+<br>
+<br>
+More attributes and other details here:<br>
+<br>
+<br>
+<br>
+<ul>
+<li>http://caridy.github.com/api/gallery-dispatcher/Y.Dispatcher.html</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<h3>Examples</h3><br>
+<br>
+<br>
+<br>
+<ul>
+<li>http://caridy.github.com/examples/gallery-dispatcher/simple.html</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<h3>Tests</h3><br>
+<br>
+<br>
+<br>
+Run this test in your browser and report any issue. <br>
+<br>
+<br>
+<br>
+<ul>
+<li>http://caridy.name/sandbox/yui3-gallery/src/gallery-dispatcher/tests/dispatcher.html</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+Note: Make sure you include OS, Browser Version and the test result from YUI Console in your ticket.<br>
+<br>
+<br>
+<br>
+<h3>CHANGELOG</h3><br>
+<br>
+<br>
+<br>
+Check the latest changes in this module.<br>
+<br>
+<br>
+<br>
+<ul>
+<li>http://github.com/caridy/yui3-gallery/tree/master/src/gallery-dispatcher/</li>
+</ul>
+<br>
+</p>
+
+```
+YUI().use('gallery-dispatcher', function(Y) {
+
+  new Y.Dispatcher ({
+        node: '#demo',
+        content: '<p>Please wait... (Injecting Static Markup)</p>'
+  }).set('content', "<p>HTML Fragment with style, link and/or script tags (eg. <style>body{color:red;}</style>)");
+
+  new Y.Dispatcher ({
+        node: '#demoajax',
+        content: 'Please wait... (Injecting External Markup: fragment.html)'
+  }).set('uri', 'fragment.html');
+
+});
+```
+

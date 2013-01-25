@@ -1,0 +1,11 @@
+{
+    "name"       : "gallery-dispatcher",
+    "displayName": "Gallery: dispatcher",
+    "description": "Porting Bubbling Library Dispatcher Plugin to YUI 3",
+    "author"     : [ "caridy" ],
+    "use"        : [ "gallery-dispatcher" ],
+
+    "tags": [ "gallery" ],
+
+    "examples": []
+}

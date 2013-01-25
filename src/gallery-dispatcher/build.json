@@ -1,0 +1,10 @@
+{
+    "name": "gallery-dispatcher",
+    "builds": {
+        "gallery-dispatcher": {
+            "jsfiles": [
+                "gallery-dispatcher.js"
+            ]
+        }
+    }
+}

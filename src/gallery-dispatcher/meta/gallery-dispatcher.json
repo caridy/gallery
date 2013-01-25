@@ -1,0 +1,12 @@
+{
+    "gallery-dispatcher": {
+        "requires": [
+            "base",
+            "node-base",
+            "io-base",
+            "get",
+            "async-queue",
+            "classnamemanager"
+        ]
+    }
+}
